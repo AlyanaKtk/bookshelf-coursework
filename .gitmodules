@@ -1,0 +1,3 @@
+[submodule "frontend-bookshelf"]
+	path = frontend-bookshelf
+	url = https://github.com/AlyanaKtk/frontend-bookshelf.git
