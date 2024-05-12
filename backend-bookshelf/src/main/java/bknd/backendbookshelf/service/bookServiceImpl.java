@@ -1,5 +1,6 @@
 package bknd.backendbookshelf.service;
 
+import bknd.backendbookshelf.exception.BookNotFoundException;
 import bknd.backendbookshelf.model.Book;
 import bknd.backendbookshelf.repository.BookRepository;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class bookServiceImpl implements bookService{
     }
 
     @Override
-    public Optional<Book> getBook(Long id) {
-        return bookRepository.findById(id);
+    public Book getBook(Long id) {
+        return bookRepository.findById(id).orElseThrow(() -> new BookNotFoundException(String.format("Book with this Id doesn't exist")));
     }
 
 

@@ -8,7 +8,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "reader", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 
 public class Reader
 {
